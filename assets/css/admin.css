@@ -1,0 +1,7 @@
+#wp-gpt-output {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: #f9f9f9;
+    max-height: 200px;
+    overflow-y: auto;
+}
