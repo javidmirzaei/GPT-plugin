@@ -2,15 +2,17 @@
 /*
 Plugin Name: CONTENT GENERATOR
 Description: Generates content using CHAT-GPT.
-Version: 1.0.1
-Author: Majid
-Update URI: https://example.com/plugins/content-generator/
+Version: 1.0.3
+Author: Aaradbranding
+Update URI: https://github.com/javidmirzaei/GPT-plugin/
 */
 
 // جلوگیری از دسترسی مستقیم
 if (!defined('ABSPATH')) {
     exit;
 }
+
+// تغییرات جدید در نسخه 1.0.3 - بهبود عملکرد و پشتیبانی از آپدیت خودکار
 
 // لود فایل‌های مورد نیاز
 require_once plugin_dir_path(__FILE__) . 'includes/api.php';
