@@ -1,0 +1,69 @@
+# IDE and editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+.DS_Store
+
+# Temporary files
+.tmp
+.temp
+.cache
+Thumbs.db
+*~
+._*
+*.bak
+*.swp
+*.log
+
+# Composer and node packages
+composer.phar
+/vendor/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Packaging files
+*.zip
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+dist/
+build/
+
+# WordPress files
+.htaccess
+wp-config.php
+wp-content/uploads/
+wp-content/plugins/*
+!wp-content/plugins/GPT-plugin/
+
+# Local files
+local-config.php
+wp-cli.local.yml
+
+# Settings and API keys
+api-keys.php
+.env
+*.env
+.env.*
+
+# Upload and test files
+uploads/
+/tests/logs/
+
+# Backup files
+backups/
+*-backup-*
+*-backup/
+*.backup
+
+# Other
+CHANGELOG.md
+README.md
+todo.txt
+
+# Debug
+debug.log 

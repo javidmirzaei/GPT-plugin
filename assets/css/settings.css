@@ -1,0 +1,537 @@
+/* GPT Content Generator Settings Page Styles */
+
+/* فونت وزیر با استفاده از فایل‌های محلی */
+@font-face {
+    font-family: 'Vazir';
+    src: url('../fonts/Vazirmatn-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('../fonts/Vazirmatn-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* گرادیان و طرح زمینه */
+.wp-gpt-settings-page {
+    max-width: 850px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 35px;
+    direction: rtl;
+    text-align: right;
+    font-family: 'Vazir', Tahoma, Arial, sans-serif;
+    color: #333;
+    border-top: 5px solid #a5525f;
+    position: relative;
+    overflow: hidden;
+}
+
+.wp-gpt-settings-page:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0) 70%);
+    z-index: 0;
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+}
+
+.wp-gpt-settings-page:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(165, 82, 95, 0.1) 0%, rgba(165, 82, 95, 0) 70%);
+    z-index: 0;
+    border-radius: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.wp-gpt-settings-page > * {
+    position: relative;
+    z-index: 1;
+}
+
+.wp-gpt-settings-page h1 {
+    color: #a5525f;
+    font-size: 28px;
+    font-weight: bold;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    font-family: 'Vazir', Tahoma, Arial, sans-serif;
+}
+
+.wp-gpt-settings-section {
+    margin-bottom: 35px;
+    background: #fcfcfc;
+    border-radius: 12px;
+    padding: 25px;
+    border-right: 5px solid #d4af37;
+    border-left: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.wp-gpt-settings-section:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+.wp-gpt-settings-section h2 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #d4af37;
+    font-family: 'Vazir', Tahoma, Arial, sans-serif;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding-right: 15px;
+}
+
+.wp-gpt-settings-section h2:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background: #d4af37;
+    border-radius: 50%;
+}
+
+.wp-gpt-settings-section p {
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-family: 'Vazir', Tahoma, Arial, sans-serif;
+}
+
+.wp-gpt-settings-field {
+    margin-bottom: 28px;
+    position: relative;
+    padding-right: 20px;
+    border-right: 2px solid rgba(212, 175, 55, 0.2);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.wp-gpt-settings-field:hover {
+    border-right-color: #d4af37;
+}
+
+.wp-gpt-settings-field:last-child {
+    margin-bottom: 0;
+}
+
+.wp-gpt-settings-field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #444;
+    font-size: 16px;
+    font-family: 'Vazir', Tahoma, Arial, sans-serif;
+}
+
+.wp-gpt-settings-field input[type="text"],
+.wp-gpt-settings-field input[type="url"],
+.wp-gpt-settings-field input[type="number"],
+.wp-gpt-settings-field input[type="password"],
+.wp-gpt-settings-field textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e1e1e1;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.07);
+    transition: all 0.3s ease-in-out;
+    font-family: 'Vazir', Tahoma, Arial, sans-serif;
+    font-size: 15px;
+    background: #fbfbfb;
+}
+
+.wp-gpt-settings-field input[type="text"]:focus,
+.wp-gpt-settings-field input[type="url"]:focus,
+.wp-gpt-settings-field input[type="number"]:focus,
+.wp-gpt-settings-field input[type="password"]:focus,
+.wp-gpt-settings-field textarea:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    outline: none;
+    background: #fff;
+}
+
+.wp-gpt-settings-field .description {
+    color: #777;
+    font-style: italic;
+    font-size: 13px;
+    margin-top: 10px;
+    line-height: 1.6;
+    font-family: 'Vazir', Tahoma, Arial, sans-serif;
+    padding-right: 5px;
+    border-right: 2px dashed rgba(165, 82, 95, 0.2);
+}
+
+.wp-gpt-settings-page .submit {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #f0f0f0;
+    text-align: left;
+}
+
+.wp-gpt-settings-page .button-primary {
+    background: #a5525f;
+    border-color: #943b47;
+    box-shadow: 0 3px 0 #943b47;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Vazir', Tahoma, Arial, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.wp-gpt-settings-page .button-primary:hover {
+    background: #c1636e;
+    border-color: #a5525f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(165, 82, 95, 0.3);
+}
+
+.wp-gpt-settings-page .button-primary:active {
+    background: #943b47;
+    border-color: #80333e;
+    transform: translateY(0);
+    box-shadow: 0 1px 0 #80333e;
+}
+
+/* API Key Field Styling */
+.wp-gpt-api-key-field {
+    position: relative;
+}
+
+.wp-gpt-api-key-field input[type="text"],
+.wp-gpt-api-key-field input[type="password"] {
+    padding-left: 45px;
+    padding-right: 18px;
+    letter-spacing: 1px;
+    font-family: monospace;
+}
+
+.wp-gpt-api-key-toggle {
+    position: absolute;
+    left: 15px;
+    right: auto;
+    top: 47px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #a5525f;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 18px;
+    transition: all 0.2s ease;
+    opacity: 0.7;
+}
+
+.wp-gpt-api-key-toggle:hover {
+    color: #d4af37;
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Status indicator for API key */
+.wp-gpt-api-status {
+    margin-top: 12px;
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: #f0f0f0;
+    font-family: 'Vazir', Tahoma, Arial, sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.wp-gpt-api-status.valid {
+    background: #f0f8e6;
+    color: #3c763d;
+    border-right: 3px solid #3c763d;
+    box-shadow: 0 2px 5px rgba(60, 118, 61, 0.1);
+}
+
+.wp-gpt-api-status.invalid {
+    background: #fdf2f2;
+    color: #a94442;
+    border-right: 3px solid #a94442;
+    box-shadow: 0 2px 5px rgba(169, 68, 66, 0.1);
+}
+
+.wp-gpt-api-status.checking {
+    background: #edf7fd;
+    color: #31708f;
+    border-right: 3px solid #31708f;
+    box-shadow: 0 2px 5px rgba(49, 112, 143, 0.1);
+}
+
+/* Version info footer */
+.wp-gpt-version-info {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+    color: #888;
+    font-size: 13px;
+    text-align: center;
+    font-family: 'Vazir', Tahoma, Arial, sans-serif;
+}
+
+/* Settings header box animation */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(165, 82, 95, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(165, 82, 95, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(165, 82, 95, 0);
+    }
+}
+
+.wp-gpt-settings-section:first-of-type {
+    animation: pulse 2s 3;
+}
+
+/* Input focus highlight animation */
+@keyframes highlight {
+    0% {
+        border-color: #a5525f;
+        box-shadow: 0 0 0 1px #a5525f;
+    }
+    50% {
+        border-color: #d4af37;
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
+    }
+    100% {
+        border-color: #a5525f;
+        box-shadow: 0 0 0 1px #a5525f;
+    }
+}
+
+.wp-gpt-settings-field input:focus {
+    animation: highlight 2s ease-in-out;
+}
+
+/* Help tooltip */
+.wp-gpt-tooltip {
+    position: relative;
+    display: inline-block;
+    margin-right: 8px;
+    cursor: help;
+    vertical-align: middle;
+}
+
+.wp-gpt-tooltip .dashicons {
+    color: #d4af37;
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+    vertical-align: middle;
+    transition: all 0.2s ease;
+    opacity: 0.8;
+}
+
+.wp-gpt-tooltip:hover .dashicons {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.wp-gpt-tooltip .tooltip-content {
+    visibility: hidden;
+    width: 280px;
+    background-color: #333;
+    color: #fff;
+    text-align: right;
+    border-radius: 8px;
+    padding: 15px;
+    position: absolute;
+    z-index: 10;
+    bottom: 130%;
+    right: 50%;
+    left: auto;
+    margin-left: 0;
+    margin-right: -140px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 1.8;
+    font-family: 'Vazir', Tahoma, Arial, sans-serif;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(10px);
+}
+
+.wp-gpt-tooltip .tooltip-content::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 50%;
+    left: auto;
+    margin-left: 0;
+    margin-right: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+.wp-gpt-tooltip:hover .tooltip-content {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Improve the loading spinner */
+.wp-gpt-settings-page .spinner {
+    float: none;
+    visibility: visible;
+    margin-top: 0;
+}
+
+/* Improve dashicon alignment */
+.wp-gpt-settings-page .dashicons {
+    line-height: 1.4;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+/* RTL adjustments for the spinner */
+.wp-gpt-settings-page .button-primary.updating {
+    padding-right: 45px !important;
+    padding-left: 25px !important;
+}
+
+.wp-gpt-settings-page .button-primary.updating .spinner {
+    right: 12px;
+    left: auto;
+}
+
+/* پیشرفت بار */
+.wp-gpt-progress-bar {
+    height: 4px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 2px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    position: relative;
+}
+
+.wp-gpt-progress-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to right, #a5525f, #d4af37);
+    border-radius: 2px;
+    position: relative;
+    transition: width 1.5s cubic-bezier(0.1, 0.7, 0.6, 1);
+}
+
+.wp-gpt-progress-fill:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to right, 
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0) 100%);
+    animation: shimmer 2s infinite;
+    transform: translateX(-100%);
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 782px) {
+    .wp-gpt-settings-page {
+        padding: 25px;
+        margin: 20px auto;
+    }
+    
+    .wp-gpt-settings-section {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .wp-gpt-settings-page {
+        max-width: 95%;
+        padding: 20px;
+    }
+    
+    .wp-gpt-settings-field input[type="text"],
+    .wp-gpt-settings-field input[type="url"],
+    .wp-gpt-settings-field input[type="number"],
+    .wp-gpt-settings-field input[type="password"],
+    .wp-gpt-settings-field textarea {
+        width: 100%;
+        padding: 10px 15px;
+    }
+    
+    .wp-gpt-settings-field {
+        padding-right: 15px;
+    }
+    
+    .wp-gpt-settings-section {
+        padding: 15px;
+    }
+    
+    .wp-gpt-settings-page h1 {
+        font-size: 22px;
+    }
+}
+
+/* Additional styles for the settings page */
+.wp-gpt-settings-page a {
+    color: #a5525f;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.wp-gpt-settings-page a:hover {
+    color: #d4af37;
+    text-decoration: none;
+    border-bottom: 1px dotted #d4af37;
+} 
