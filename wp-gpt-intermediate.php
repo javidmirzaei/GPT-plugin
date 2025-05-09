@@ -2,7 +2,7 @@
 /*
 Plugin Name: تولید محتوا با هوش مصنوعی
 Description: این افزونه به شما امکان می‌دهد با استفاده از هوش مصنوعی GPT محتوای حرفه‌ای و خلاقانه تولید کنید. قابلیت تولید انواع متن از جمله مقالات، توضیحات محصول، متون تبلیغاتی و بسیاری موارد دیگر را دارد.
-Version: 1.0.5
+Version: 1.1.0
 Author: آراد برندینگ
 Author URI: https://aradbranding.com
 Update URI: https://github.com/javidmirzaei/GPT-plugin/

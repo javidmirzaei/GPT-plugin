@@ -1,42 +1,64 @@
-# CONTENT GENERATOR Plugin
+# تولید محتوا با هوش مصنوعی
 
-This plugin is a content generation tool using ChatGPT for WordPress.
+<p align="center">
+  <img src="assets/images/logo.png" alt="لوگوی تولید محتوا با هوش مصنوعی" width="200"/>
+</p>
 
-## Installation and Update System Setup
+پلاگین تولید محتوا با هوش مصنوعی یک افزونه قدرتمند برای وردپرس است که به شما امکان می‌دهد با استفاده از هوش مصنوعی GPT، محتوای حرفه‌ای و خلاقانه تولید کنید.
 
-### Method 1: Using a Personal Server
+## ویژگی‌ها
 
-1. Upload the files in the `update-server` folder to a web server.
-2. Place a zipped version of the plugin named `wp-gpt-intermediate-1.0.5.zip` in the `update-server/files` folder. (The name and version should match the update server settings)
-3. In the plugin settings, "Update Settings" section, enter the update server address. Example: `https://example.com/update-server`
+- **تولید خودکار محتوا**: محتوای متنی با کیفیت بالا در چند ثانیه تولید کنید
+- **رابط کاربری زیبا و کاربرپسند**: طراحی مدرن با پشتیبانی کامل از RTL و فونت فارسی
+- **تنظیمات سفارشی**: امکان تنظیم پارامترهای مختلف برای تولید محتوای مطابق با نیاز شما
+- **یکپارچه با ویرایشگر وردپرس**: تجربه کاربری یکپارچه با محیط ویرایشگر وردپرس
+- **پشتیبانی از زبان فارسی**: رابط کاربری کاملاً فارسی و پشتیبانی از محتوای فارسی
 
-### Method 2: Using GitHub (Recommended)
+## نصب
 
-1. Make sure your GitHub repository is public at: https://github.com/javidmirzaei/GPT-plugin
-2. Create a new release in GitHub with a tag matching your plugin version (e.g., `v1.0.5`)
-3. In the plugin settings, leave the "Update Server Address" field empty so the update system uses GitHub
+1. فایل زیپ پلاگین را از [صفحه releases](https://github.com/javidmirzaei/GPT-plugin/releases) دانلود کنید
+2. به پنل مدیریت وردپرس خود بروید
+3. به بخش "افزونه‌ها" > "افزودن" بروید
+4. بر روی "بارگذاری افزونه" کلیک کنید
+5. فایل زیپ دانلود شده را انتخاب و بارگذاری کنید
+6. پس از نصب، افزونه را فعال کنید
 
-## How to Create a GitHub Release
+## پیکربندی
 
-1. Go to your GitHub repository (https://github.com/javidmirzaei/GPT-plugin)
-2. Click on "Releases" in the right sidebar
-3. Click "Create a new release"
-4. Set the tag version to match your plugin version (e.g., `v1.0.5`)
-5. Add a title and description for your release
-6. Upload a ZIP file of your plugin (optional but recommended)
-7. Click "Publish release"
+1. پس از فعال‌سازی افزونه، به بخش "تنظیمات تولید محتوا" در منوی اصلی مدیریت وردپرس بروید
+2. یک [کلید API معتبر OpenAI](https://platform.openai.com/account/api-keys) دریافت کنید
+3. کلید API خود را در فیلد مربوطه وارد کنید
+4. سایر تنظیمات را بر اساس نیاز خود تنظیم کنید
+5. بر روی "ذخیره تنظیمات" کلیک کنید
 
-## Update Server File Structure (When Using a Personal Server)
+## نحوه استفاده
 
-1. `version.php`: This file returns the current version number of the plugin
-2. `info.php`: This file returns complete information about the new version in JSON format
-3. `download.php`: This file is used to download the ZIP file of the new version
-4. `files/`: A folder for storing ZIP files of new versions
+1. به بخش "نوشته‌ها" > "افزودن" بروید
+2. در ویرایشگر محتوا، متاباکس "تولید محتوا با هوش مصنوعی" را پیدا کنید
+3. موضوع یا سوال مورد نظر خود را وارد کنید
+4. بر روی دکمه "تولید محتوا" کلیک کنید
+5. محتوای تولید شده را بررسی و در صورت نیاز ویرایش کنید
+6. محتوای نهایی را به مقاله خود اضافه کنید
 
-## How to Release a New Version
+## پیش‌نیازها
 
-1. Increase the version number in the main plugin file (`wp-gpt-intermediate.php`)
-2. If using GitHub: create a new release with the matching version tag
-3. If using a personal server: update the `version.php` and `info.php` files and upload a new ZIP file
+- وردپرس 5.6 یا بالاتر
+- PHP 7.4 یا بالاتر
+- مرورگر مدرن (Chrome، Firefox، Safari، Edge)
+- کلید API معتبر OpenAI
 
-After completing these steps, users can update the plugin to the new version through their WordPress admin panel. 
+## پشتیبانی
+
+برای دریافت پشتیبانی یا گزارش مشکلات، لطفاً یک [issue جدید](https://github.com/javidmirzaei/GPT-plugin/issues) ایجاد کنید یا با ایمیل [support@aaradbranding.com](mailto:support@aaradbranding.com) تماس بگیرید.
+
+## مجوز
+
+این پلاگین تحت مجوز [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html) یا بالاتر منتشر شده است.
+
+## توسعه‌دهندگان
+
+- [آراد برندینگ](https://aradbranding.com)
+
+## تاریخچه تغییرات
+
+برای مشاهده تاریخچه کامل تغییرات، لطفاً [CHANGELOG.md](CHANGELOG.md) را مطالعه کنید. 

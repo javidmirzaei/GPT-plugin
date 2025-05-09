@@ -167,7 +167,7 @@ jQuery(document).ready(function($) {
     
     // Add plugin version info
     $('.wp-gpt-settings-page').append(
-        $('<div class="wp-gpt-version-info">تولید محتوا با هوش مصنوعی | نسخه 1.0.5 | &copy; آراد برندینگ</div>')
+        $('<div class="wp-gpt-version-info">تولید محتوا با هوش مصنوعی | نسخه 1.1.0 | &copy; آراد برندینگ</div>')
     );
     
     // اضافه کردن یک نوار پیشرفت تزئینی 
