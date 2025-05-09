@@ -1,34 +1,42 @@
-# پلاگین CONTENT GENERATOR
+# CONTENT GENERATOR Plugin
 
-این پلاگین یک ابزار تولید محتوا با استفاده از ChatGPT برای وردپرس است.
+This plugin is a content generation tool using ChatGPT for WordPress.
 
-## نصب و راه‌اندازی سیستم بروزرسانی
+## Installation and Update System Setup
 
-### روش اول: استفاده از سرور شخصی
+### Method 1: Using a Personal Server
 
-1. فایل‌های پوشه `update-server` را در یک سرور وب بارگذاری کنید.
-2. در پوشه `update-server/files` یک نسخه زیپ شده از پلاگین با نام `wp-gpt-intermediate-1.0.2.zip` قرار دهید. (نام و نسخه مطابق با تنظیمات سرور بروزرسانی باشد)
-3. در تنظیمات پلاگین، بخش "تنظیمات بروزرسانی"، آدرس سرور بروزرسانی را وارد کنید. مثال: `https://example.com/update-server`
+1. Upload the files in the `update-server` folder to a web server.
+2. Place a zipped version of the plugin named `wp-gpt-intermediate-1.0.5.zip` in the `update-server/files` folder. (The name and version should match the update server settings)
+3. In the plugin settings, "Update Settings" section, enter the update server address. Example: `https://example.com/update-server`
 
-### روش دوم: استفاده از گیت‌هاب
+### Method 2: Using GitHub (Recommended)
 
-1. فایل `includes/updater.php` را باز کنید
-2. مقادیر `$this->username` و `$this->repository` را با نام کاربری و نام مخزن گیت‌هاب خود تغییر دهید
-3. اطمینان حاصل کنید که مخزن گیت‌هاب شما دارای ریلیزهای تگ شده باشد (مثلاً v1.0.2)
-4. در تنظیمات پلاگین، فیلد "آدرس سرور بروزرسانی" را خالی بگذارید تا سیستم بروزرسانی از گیت‌هاب استفاده کند
+1. Make sure your GitHub repository is public at: https://github.com/javidmirzaei/GPT-plugin
+2. Create a new release in GitHub with a tag matching your plugin version (e.g., `v1.0.5`)
+3. In the plugin settings, leave the "Update Server Address" field empty so the update system uses GitHub
 
-## ساختار فایل‌های سرور بروزرسانی
+## How to Create a GitHub Release
 
-1. `version.php`: این فایل شماره نسخه فعلی پلاگین را برمی‌گرداند
-2. `info.php`: این فایل اطلاعات کامل نسخه جدید را در قالب JSON برمی‌گرداند
-3. `download.php`: این فایل برای دانلود فایل ZIP نسخه جدید استفاده می‌شود
-4. `files/`: پوشه‌ای برای نگهداری فایل‌های ZIP نسخه‌های جدید
+1. Go to your GitHub repository (https://github.com/javidmirzaei/GPT-plugin)
+2. Click on "Releases" in the right sidebar
+3. Click "Create a new release"
+4. Set the tag version to match your plugin version (e.g., `v1.0.5`)
+5. Add a title and description for your release
+6. Upload a ZIP file of your plugin (optional but recommended)
+7. Click "Publish release"
 
-## نحوه انتشار یک نسخه جدید
+## Update Server File Structure (When Using a Personal Server)
 
-1. شماره نسخه را در فایل اصلی پلاگین (`wp-gpt-intermediate.php`) افزایش دهید
-2. فایل‌های `version.php` و `info.php` را در سرور بروزرسانی به‌روز کنید
-3. فایل ZIP جدید را در پوشه `files/` در سرور بروزرسانی قرار دهید
-4. مسیر دانلود در `download.php` را در صورت نیاز به‌روز کنید
+1. `version.php`: This file returns the current version number of the plugin
+2. `info.php`: This file returns complete information about the new version in JSON format
+3. `download.php`: This file is used to download the ZIP file of the new version
+4. `files/`: A folder for storing ZIP files of new versions
 
-بعد از انجام این مراحل، کاربران می‌توانند از طریق پنل مدیریت وردپرس خود، پلاگین را به نسخه جدید بروزرسانی کنند. 
+## How to Release a New Version
+
+1. Increase the version number in the main plugin file (`wp-gpt-intermediate.php`)
+2. If using GitHub: create a new release with the matching version tag
+3. If using a personal server: update the `version.php` and `info.php` files and upload a new ZIP file
+
+After completing these steps, users can update the plugin to the new version through their WordPress admin panel. 

@@ -1,5 +1,5 @@
 <?php
-// خروجی این فایل باید یک JSON باشد که اطلاعات نسخه جدید را برمی‌گرداند
+// The output of this file must be a JSON that returns the new version information
 header('Content-Type: application/json');
 
 $plugin = isset($_GET['plugin']) ? $_GET['plugin'] : '';

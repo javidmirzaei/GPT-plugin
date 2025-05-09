@@ -71,12 +71,13 @@ class WP_GPT_Updater {
                 return trim(wp_remote_retrieve_body($request));
             }
         } else {
-            // If update server is not specified, you can use github
+            // If update server is not specified, use github
             $request = wp_remote_get(
                 "https://api.github.com/repos/{$this->username}/{$this->repository}/releases/latest",
                 [
                     'headers' => [
                         'Accept' => 'application/vnd.github.v3+json',
+                        'User-Agent' => 'WordPress/' . get_bloginfo('version'),
                     ],
                 ]
             );
@@ -102,12 +103,24 @@ class WP_GPT_Updater {
                 [
                     'headers' => [
                         'Accept' => 'application/vnd.github.v3+json',
+                        'User-Agent' => 'WordPress/' . get_bloginfo('version'),
                     ],
                 ]
             );
 
             if (!is_wp_error($request) && 200 === wp_remote_retrieve_response_code($request)) {
                 $response = json_decode(wp_remote_retrieve_body($request));
+                
+                // First try to get the attached ZIP file if available
+                if (!empty($response->assets) && is_array($response->assets)) {
+                    foreach ($response->assets as $asset) {
+                        if (isset($asset->browser_download_url) && strpos($asset->name, '.zip') !== false) {
+                            return $asset->browser_download_url;
+                        }
+                    }
+                }
+                
+                // Fallback to the source code ZIP if no attached ZIP file
                 if (isset($response->zipball_url)) {
                     return $response->zipball_url;
                 }
@@ -144,6 +157,7 @@ class WP_GPT_Updater {
                 [
                     'headers' => [
                         'Accept' => 'application/vnd.github.v3+json',
+                        'User-Agent' => 'WordPress/' . get_bloginfo('version'),
                     ],
                 ]
             );
@@ -164,7 +178,21 @@ class WP_GPT_Updater {
                     'description' => $this->plugin_data['Description'],
                     'changelog' => nl2br($response->body),
                 ];
-                $plugin_info->download_link = $response->zipball_url;
+                
+                // First try to get the attached ZIP file if available
+                if (!empty($response->assets) && is_array($response->assets)) {
+                    foreach ($response->assets as $asset) {
+                        if (isset($asset->browser_download_url) && strpos($asset->name, '.zip') !== false) {
+                            $plugin_info->download_link = $asset->browser_download_url;
+                            break;
+                        }
+                    }
+                }
+                
+                // Fallback to the source code ZIP if no attached ZIP file
+                if (!isset($plugin_info->download_link) && isset($response->zipball_url)) {
+                    $plugin_info->download_link = $response->zipball_url;
+                }
                 
                 return $plugin_info;
             }
