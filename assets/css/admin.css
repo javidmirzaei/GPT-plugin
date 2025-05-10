@@ -5,3 +5,32 @@
     max-height: 200px;
     overflow-y: auto;
 }
+.text-area {
+    width: 100%;
+    background-color: #eee;
+    border: none;
+    border-radius: 5px;
+    margin: 10px auto;
+    resize: none;
+  }
+  .btn {
+    width: 25%;
+    background-color: #2e86de;
+    border: none;
+    padding: 5px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  #btn-1 {
+    background-color: #2e86de;
+    border: none;
+    padding: 5px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
